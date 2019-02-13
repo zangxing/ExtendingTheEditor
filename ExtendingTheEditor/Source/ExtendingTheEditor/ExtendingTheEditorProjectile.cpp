@@ -31,7 +31,7 @@ AExtendingTheEditorProjectile::AExtendingTheEditorProjectile()
 	InitialLifeSpan = 3.0f;
 }
 
-void AExtendingTheEditorProjectile::OnHit(AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit)
+void AExtendingTheEditorProjectile::OnHit(class UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit)
 {
 	// Only add impulse and destroy projectile if we hit a physics
 	if ((OtherActor != NULL) && (OtherActor != this) && (OtherComp != NULL) && OtherComp->IsSimulatingPhysics())

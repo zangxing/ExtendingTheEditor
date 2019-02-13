@@ -5,15 +5,19 @@ using System.Collections.Generic;
 
 public class ExtendingTheEditorTarget : TargetRules
 {
-	public ExtendingTheEditorTarget(TargetInfo Target)
+	public ExtendingTheEditorTarget(TargetInfo Target) : base (Target)
 	{
 		Type = TargetType.Game;
+		
+		ExtraModuleNames.AddRange( new string[] {"ExtendingTheEditor"});
 	}
+	
+	
 
 	//
 	// TargetRules interface.
 	//
-
+/*
 	public override void SetupBinaries(
 		TargetInfo Target,
 		ref List<UEBuildBinaryConfiguration> OutBuildBinaryConfigurations,
@@ -22,4 +26,5 @@ public class ExtendingTheEditorTarget : TargetRules
 	{
 		OutExtraModuleNames.Add("ExtendingTheEditor");
 	}
+	*/
 }
